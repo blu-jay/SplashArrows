@@ -1,0 +1,12 @@
+name: Splash Arrows
+version: '${project.version}'
+main: xyz.blujay.splasharrows.SplashArrows
+api-version: 1.18
+prefix: SplashArrows
+authors: [ blujay ]
+description: Make tipped arrows useful with area of effect
+website: blujay.xyz
+commands:
+  SplashArrows:
+    description: Displays the credits for the plugin.
+    usage: /<command>
