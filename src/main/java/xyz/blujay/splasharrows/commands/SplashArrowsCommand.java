@@ -28,12 +28,13 @@ public class SplashArrowsCommand implements CommandExecutor {
         // Website: blujay.xyz
         //---------------------
         var senderAudience = SplashArrows.getPlugin().adventure().sender(sender);
-        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>----Tipped Arrows----</gradient>"));
-        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>| Created by blujay</gradient>"));
-        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>| https://github.com/blu-jay/SplashArrows</gradient>"));
-        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>| Like my work? you can support me!</gradient>"));
-        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>| https://www.paypal.com/paypalme/blujayxyz</gradient>"));
-        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>| Website: blujay.xyz</gradient>"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>---------------------</gradient>"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>⋙ SplashArrows</gradient>"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>⋙ Created by blujay</gradient>"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>⋙ Like my work? You can support me!</gradient>"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>⋙ Source Code:</gradient> <blue><underlined>github.com/blu-jay/SplashArrows"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>⋙ Donations:</gradient> <blue><underlined>paypal.com/paypalme/blujayxyz"));
+        senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>⋙ Website:</gradient> <blue><underlined>blujay.xyz"));
         senderAudience.sendMessage(MiniMessage.get().parse("<gradient:#00BFFB:#FD00C5>---------------------</gradient>"));
 
         return true;
