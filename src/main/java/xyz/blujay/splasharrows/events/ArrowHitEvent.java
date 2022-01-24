@@ -15,7 +15,12 @@ public class ArrowHitEvent implements Listener {
     @EventHandler
     public void onArrowHit(ProjectileHitEvent e){
         if(e.getEntity() instanceof Arrow arrow){
-            var logger = SplashArrows.getPlugin().getLogger();
+
+            if(arrow.getShooter() instanceof Player p){
+                if(!p.hasPermission("splasharrows.use")){
+                    return;
+                }
+            }
             if ((e.getHitBlock() != null) && (arrow.getBasePotionData().getType() != PotionType.UNCRAFTABLE || arrow.hasCustomEffects())) {
                 arrow.setPickupStatus(AbstractArrow.PickupStatus.CREATIVE_ONLY);
 
@@ -29,10 +34,12 @@ public class ArrowHitEvent implements Listener {
                         //Create new effect with half the duration and add to effect cloud.
                         var newEffect = new PotionEffect(effect.getType(), (effect.getDuration() / 4 / 2), effect.getAmplifier(), effect.isAmbient(), effect.hasParticles(), effect.hasIcon());
                         potionEffect.addCustomEffect(newEffect, false);
+
+                        arrow.removeCustomEffect(effect.getType());
                     } ;
                 }
                 PotionConverter.ConvertPotionData(arrow.getBasePotionData(), potionEffect);
-
+                arrow.setBasePotionData(new PotionData(PotionType.UNCRAFTABLE));
             }
         }
     }

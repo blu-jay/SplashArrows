@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import xyz.blujay.splasharrows.commands.SplashArrowsCommand;
 import xyz.blujay.splasharrows.events.ArrowHitEvent;
+import xyz.blujay.splasharrows.utilities.Metrics;
 
 public final class SplashArrows extends JavaPlugin {
 
@@ -26,10 +27,12 @@ public final class SplashArrows extends JavaPlugin {
 
         this.adventure = BukkitAudiences.create(this);
 
-        getCommand("SplashArrows").setExecutor(new SplashArrowsCommand());
-        this.getLogger().info("SplashArrows has started!");
-        getServer().getPluginManager().registerEvents(new ArrowHitEvent(), this);
+        int pluginId = 14037;
+        Metrics metrics = new Metrics(this, pluginId);
 
+        getCommand("SplashArrows").setExecutor(new SplashArrowsCommand());
+        getServer().getPluginManager().registerEvents(new ArrowHitEvent(), this);
+        this.getLogger().info("SplashArrows has started!");
     }
 
     @Override

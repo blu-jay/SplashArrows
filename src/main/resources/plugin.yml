@@ -10,3 +10,14 @@ commands:
   SplashArrows:
     description: Displays the credits for the plugin.
     usage: /<command>
+    permission: splasharrows.credits
+permissions:
+  splasharrows.*:
+    description: Have access to all permissions of AutoTotem
+    default: op
+  splasharrows.use:
+    description: Totems will be automatically used
+    default: true
+  splasharrows.credits:
+    description: Permission to use /splasharrows and view the plugin credits
+    default: true
